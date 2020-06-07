@@ -6,8 +6,8 @@
       class="block fixed inset-x-0 bottom-0 z-10 bg-white shadow"
     >
       <div id="tabs" class="flex justify-between">
-        <a
-          href="#/"
+        <router-link
+          to="/"
           class="w-full focus:text-teal-500 hover:text-teal-500 justify-center inline-block text-center pt-2 pb-1"
         >
           <img
@@ -17,10 +17,10 @@
             class="justify-center"
           />
           <span class="tab tab-home block text-xs">Home</span>
-        </a>
+        </router-link>
 
-        <a
-          href="#/stories"
+        <router-link
+          to="/stories"
           class="w-full focus:text-teal-500 hover:text-teal-500 justify-center inline-block text-center pt-2 pb-1"
         >
           <img
@@ -30,9 +30,9 @@
             class="justify-center"
           />
           <span class="tab tab-home block text-xs">Stories</span>
-        </a>
-        <a
-          href="#/videos"
+        </router-link>
+        <router-link
+          to="/videos"
           class="w-full focus:text-teal-500 hover:text-teal-500 justify-center inline-block text-center pt-2 pb-1"
         >
           <img
@@ -42,7 +42,7 @@
             class="justify-center"
           />
           <span class="tab tab-home block text-xs">Videos</span>
-        </a>
+        </router-link>
       </div>
     </section>
   </div>
