@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="w-screen">
     {{ video.title }}
     <p>
       {{ video.content }}
@@ -10,7 +10,6 @@
       class="video-js"
       controls
       preload="auto"
-      width="640"
       height="264"
       ref="videoPlayer"
     ></video>
