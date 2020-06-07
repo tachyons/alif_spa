@@ -1,6 +1,6 @@
 <template>
   <div class="container flex mx-auto w-full items-center justify-center">
-    <ul class="flex flex-col bg-gray-300 p-4">
+    <ul class="flex flex-col bg-gray-300 p-4 w-full">
       <li
         class="border-gray-400 flex flex-row mb-2"
         v-for="subject in subjects"
@@ -8,6 +8,7 @@
       >
         <router-link
           :to="{ name: 'Subject', params: { subjectId: subject.id } }"
+          class="w-full"
         >
           <div
             class="select-none cursor-pointer bg-gray-200 rounded-md flex flex-1 items-center p-4  transition duration-500 ease-in-out transform hover:-translate-y-1 hover:shadow-lg"
@@ -46,7 +47,6 @@ export default {
   mounted() {
     axios
       .get("https://dev.aliflearning.co/api/v1/courses/2/subjects")
-      // .then(response => (this.subjects = normalize(response)))
       .then(response => {
         this.subjects = dataFormatter.deserialize(response.data);
       });
