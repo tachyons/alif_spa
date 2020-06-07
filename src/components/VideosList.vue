@@ -3,25 +3,27 @@
     <ul class="flex flex-col bg-gray-300 p-4">
       <li
         class="border-gray-400 flex flex-row mb-2"
-        v-for="subject in subjects"
-        :key="subject.message"
+        v-for="video in videos"
+        :key="video.id"
       >
-        <div
-          class="select-none cursor-pointer bg-gray-200 rounded-md flex flex-1 items-center p-4  transition duration-500 ease-in-out transform hover:-translate-y-1 hover:shadow-lg"
-        >
+        <router-link :to="{ name: 'Video', params: { videoId: video.id } }">
           <div
-            class="flex flex-col rounded-md w-10 h-10 bg-gray-300 justify-center items-center mr-4"
+            class="select-none cursor-pointer bg-gray-200 rounded-md flex flex-1 items-center p-4  transition duration-500 ease-in-out transform hover:-translate-y-1 hover:shadow-lg"
           >
-            📼
-          </div>
-          <div class="flex-1 pl-1 mr-16">
-            <div class="font-medium">{{ subject.name }}</div>
-            <div class="text-gray-600 text-sm">
-              {{ 1 }}
+            <div
+              class="flex flex-col rounded-md w-10 h-10 bg-gray-300 justify-center items-center mr-4"
+            >
+              📼
             </div>
+            <div class="flex-1 pl-1 mr-16">
+              <div class="font-medium">{{ video.name }}</div>
+              <div class="text-gray-600 text-sm">
+                {{ 1 }}
+              </div>
+            </div>
+            <div class="text-gray-600 text-xs">1:00 PM</div>
           </div>
-          <div class="text-gray-600 text-xs">1:00 PM</div>
-        </div>
+        </router-link>
       </li>
     </ul>
   </div>
@@ -33,19 +35,16 @@ import Jsona from "jsona";
 const dataFormatter = new Jsona();
 
 export default {
-  name: "SubjectList",
+  name: "VideoList",
   data() {
     return {
-      subjects: []
+      videos: []
     };
   },
   mounted() {
-    axios
-      .get("https://dev.aliflearning.co/api/v1/videos")
-      // .then(response => (this.subjects = normalize(response)))
-      .then(response => {
-        this.subjects = dataFormatter.deserialize(response.data);
-      });
+    axios.get("https://dev.aliflearning.co/api/v1/videos").then(response => {
+      this.videos = dataFormatter.deserialize(response.data);
+    });
   },
   props: {
     msg: String

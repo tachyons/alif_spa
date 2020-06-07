@@ -6,22 +6,26 @@
         v-for="subject in subjects"
         :key="subject.message"
       >
-        <div
-          class="select-none cursor-pointer bg-gray-200 rounded-md flex flex-1 items-center p-4  transition duration-500 ease-in-out transform hover:-translate-y-1 hover:shadow-lg"
+        <router-link
+          :to="{ name: 'Subject', params: { subjectId: subject.id } }"
         >
           <div
-            class="flex flex-col rounded-md w-10 h-10 bg-gray-300 justify-center items-center mr-4"
+            class="select-none cursor-pointer bg-gray-200 rounded-md flex flex-1 items-center p-4  transition duration-500 ease-in-out transform hover:-translate-y-1 hover:shadow-lg"
           >
-            📖
-          </div>
-          <div class="flex-1 pl-1 mr-16">
-            <div class="font-medium">{{ subject.name }}</div>
-            <div class="text-gray-600 text-sm">
-              {{ subject.chapters.length }} Chapters
+            <div
+              class="flex flex-col rounded-md w-10 h-10 bg-gray-300 justify-center items-center mr-4"
+            >
+              📖
             </div>
+            <div class="flex-1 pl-1 mr-16">
+              <div class="font-medium">{{ subject.name }}</div>
+              <div class="text-gray-600 text-sm">
+                {{ subject.chapters.length }} Chapters
+              </div>
+            </div>
+            <div class="text-gray-600 text-xs">1:00 PM</div>
           </div>
-          <div class="text-gray-600 text-xs">1:00 PM</div>
-        </div>
+        </router-link>
       </li>
     </ul>
   </div>
