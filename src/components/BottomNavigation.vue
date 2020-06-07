@@ -14,7 +14,7 @@
             src="@/assets/icons/home.svg"
             width="50"
             height="50"
-            class="justify-center"
+            class="justify-center mx-auto"
           />
           <span class="tab tab-home block text-xs">Home</span>
         </router-link>
@@ -27,7 +27,7 @@
             src="@/assets/icons/stories.svg"
             width="50"
             height="50"
-            class="justify-center"
+            class="justify-center mx-auto"
           />
           <span class="tab tab-home block text-xs">Stories</span>
         </router-link>
@@ -39,7 +39,7 @@
             src="@/assets/icons/videos.svg"
             width="50"
             height="50"
-            class="justify-center"
+            class="justify-center mx-auto"
           />
           <span class="tab tab-home block text-xs">Videos</span>
         </router-link>

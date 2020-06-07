@@ -1,6 +1,6 @@
 <template>
     
-  <div class="w-full max-w-xs mx-auto">
+  <div class="w-full max-w-xs mx-auto  align-middle mt-12">
     <form
       class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
       @submit.prevent="login"
