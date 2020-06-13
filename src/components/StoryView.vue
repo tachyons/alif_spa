@@ -1,5 +1,8 @@
 <template>
-  <div v-bind:style="{ backgroundImage: 'url(' + story.background_url + ')' }" class="bg-scroll bg-opacity-25 bg-cover bg-blue-500 p-4">
+  <div
+    v-bind:style="{ backgroundImage: 'url(' + story.background_url + ')' }"
+    class="bg-scroll bg-opacity-25 bg-cover bg-blue-500 p-4"
+  >
     {{ story.title }}
     <p v-html="story.content"></p>
   </div>

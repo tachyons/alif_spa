@@ -10020,6 +10020,11 @@ vue-eslint-parser@^7.0.0:
     esquery "^1.0.1"
     lodash "^4.17.15"
 
+vue-google-oauth2@^1.5.4:
+  version "1.5.4"
+  resolved "https://registry.yarnpkg.com/vue-google-oauth2/-/vue-google-oauth2-1.5.4.tgz#1969701ef68b1cc65e9f96196109693fbcbd4132"
+  integrity sha512-KEZgPntPfzYyL8gLRNLAXggizkuBKCHZEmibVA5UgkxmUwr3KVqKLM442FHX4yFVMnd8/EpJBVisrdg1DBpbng==
+
 vue-hot-reload-api@^2.3.0:
   version "2.3.4"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.4.tgz#532955cc1eb208a3d990b3a9f9a70574657e08f2"

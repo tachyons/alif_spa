@@ -1,5 +1,4 @@
 <template>
-    
   <div class="w-full max-w-xs mx-auto  align-middle mt-12">
     <form
       class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
@@ -43,9 +42,10 @@
         </button>
         <a
           class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"
+          @click="loginGoogle"
           href="#"
         >
-          Forgot Password?
+          Login with Google
         </a>
       </div>
     </form>
@@ -83,6 +83,21 @@ export default {
           this.loading = false;
           this.err = true;
           this.err_msg = err.response.data.message;
+          console.log(err);
+        });
+    },
+    loginGoogle() {
+      this.$store
+        .dispatch("loginGoogle")
+        .then(() => {
+          this.loading = false;
+          this.err = false;
+          this.$router.push("/");
+        })
+        .catch(err => {
+          this.loading = false;
+          this.err = true;
+          this.err_msg = err;
           console.log(err);
         });
     },

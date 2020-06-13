@@ -6,8 +6,10 @@
         v-for="story in stories"
         :key="story.id"
       >
-        <router-link :to="{ name: 'Story', params: { storyId: story.id } }"
-          class="w-full">
+        <router-link
+          :to="{ name: 'Story', params: { storyId: story.id } }"
+          class="w-full"
+        >
           <div
             class="select-none cursor-pointer bg-gray-200 rounded-md flex flex-1 items-center p-4  transition duration-500 ease-in-out transform hover:-translate-y-1 hover:shadow-lg"
           >

@@ -6,8 +6,10 @@
         v-for="video in videos"
         :key="video.id"
       >
-        <router-link :to="{ name: 'Video', params: { videoId: video.id } }"
-          class="w-full">
+        <router-link
+          :to="{ name: 'Video', params: { videoId: video.id } }"
+          class="w-full"
+        >
           <div
             class="select-none cursor-pointer bg-gray-200 rounded-md flex flex-1 items-center p-4  transition duration-500 ease-in-out transform hover:-translate-y-1 hover:shadow-lg"
           >

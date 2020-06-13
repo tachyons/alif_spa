@@ -50,6 +50,28 @@ export default new Vuex.Store({
           });
       });
     },
+    async loginGoogle({ commit }) {
+      const googleUser = await this._vm.$gAuth.signIn();
+      const idToken = googleUser.getAuthResponse().id_token;
+      const response = await this._vm.$http.post(
+        "https://dev.aliflearning.co/auth/login_google",
+        { token: idToken, redirect_uri: "postmessage" }
+      );
+      if (response.status == 200) {
+        const token = response.data.auth_token;
+        localStorage.setItem("token", token);
+        axios.defaults.headers.common["Authorization"] = token;
+        const userResponse = axios({
+          url: "https://dev.aliflearning.co/api/v1/me",
+          method: "GET"
+        });
+        const user = userResponse.data;
+        console.log(user);
+        commit("auth_success", token, user);
+      } else {
+        commit("auth_error");
+      }
+    },
     logout({ commit }) {
       return new Promise(resolve => {
         commit("logout");
